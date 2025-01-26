@@ -172,25 +172,50 @@ Key DAX formulas used in the project include:
 Total Medication Cost = SUM(Visits[Medication Cost])
 ```
 
+### Total Treatment Cost:
+```DAX
+Total Treatment Cost = SUM(Visits[Treatment Cost])
+```
+
+### Total Rooms Charge:
+```DAX
+Total Rooms Charge = SUM(visits[Room Charges(daily rate)])
+```
+
+### Total Insurance Coverage:
+```DAX
+Total Insurance Coverage = SUM(visits[Insurance Coverage])
+```
+
 ### Total Billing:
 ```DAX
 Total Billing = SUM(Visits[Billing Amount])
+```
+
+### Average Medication Cost:
+```DAX
+Average Medication Cost = AVERAGE(Visits[Medication Cost])
+```
+
+### Average Treatment Cost:
+```DAX
+Average Treatment Cost = AVERAGE(Visits[Treatment Cost])
+```
+
+### Average Rooms Charge:
+```DAX
+Average Rooms Charge = AVERAGE(visits[Room Charges(daily rate)])
+```
+
+### Average Insurance Coverage:
+```DAX
+Average Insurance Coverage = AVERAGE(visits[Insurance Coverage])
 ```
 
 ### Average Billing Amount:
 ```DAX
 Average Billing Amount = AVERAGE(Visits[Billing Amount])
 ```
-
-### Percentage of Total Billing by Department:
-```DAX
-Percentage of Total Billing by Department = 
-DIVIDE(
-    SUM(Visits[Billing Amount]),
-    CALCULATE(SUM(Visits[Billing Amount]), ALL(Departments))
-)
-```
-
 ---
 
 ## User Interaction
