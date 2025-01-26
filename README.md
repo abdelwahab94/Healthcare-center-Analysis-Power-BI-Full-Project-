@@ -52,10 +52,12 @@ Before creating the data model and visualizations, the data underwent the follow
 
 ### 8. **Creating Relationships**
 Relationships between tables were established in Power BI:
-- `Patients[Patient ID] → Visits[Patient ID]`
-- `Visits[Insurance ID] → Insurance[Insurance ID]`
-- `Visits[Diagnosis ID] → Procedures[Procedure ID]`
-- `Visits[Department ID] → Departments[Department ID]`
+- `patients[City ID] <— cities[City ID]`
+- `visits[Department ID] <— departments[Department ID]`
+- `visits[Diagnosis ID] <— diagnoses[Diagnosis ID]`
+- `visits[Insurance ID] <— insurance[Insurance ID]`
+- `visits[Patient ID] <— patients[Patient ID]`
+- `visits[Procedure ID] <— procedures[Procedure ID]`
 
 ---
 
@@ -82,10 +84,12 @@ The data model consists of the following tables and relationships:
 - Columns: Date, Quarter
 
 ### Relationships
-- `Patients[Patient ID] → Visits[Patient ID]`
-- `Visits[Insurance ID] → Insurance[Insurance ID]`
-- `Visits[Diagnosis ID] → Procedures[Procedure ID]`
-- `Visits[Department ID] → Departments[Department ID]`
+- `patients[City ID] <— cities[City ID]`
+- `visits[Department ID] <— departments[Department ID]`
+- `visits[Diagnosis ID] <— diagnoses[Diagnosis ID]`
+- `visits[Insurance ID] <— insurance[Insurance ID]`
+- `visits[Patient ID] <— patients[Patient ID]`
+- `visits[Procedure ID] <— procedures[Procedure ID]`
 
 ---
 
