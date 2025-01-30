@@ -39,8 +39,14 @@ Before creating the data model and visualizations, the data underwent the follow
 ### 5. **Creating Calculated Columns**
 - A new column, `Total Billing`, was created in the `Visits` table to calculate the Total Amount of Billing:
   ```DAX
-  Total Billing = Visits[Treatment Cost]+Visits[Medication Cost]+Visits[Room Charges(daily rate)]
+  Total Billing = Visits[Treatment Cost]+Visits[Medication Cost]+(Visits[Room Charges(daily rate)]*Visits[Length of Stay]
   ```
+
+  - A new column, `Length of Stay`, was created in the `Visits` table to calculate the Length of Patient Stay:
+  ```DAX
+  Length of Stay = Visits[Discharge Date]+Visits[Admitted Date]
+  ```
+
 
 
 ### 6. **Data Normalization**
@@ -95,56 +101,55 @@ The data model consists of the following tables and relationships:
 
 ## Key Visuals
 The report includes the following key visuals:
-
 ### 1. Total Billing Overview
 #### Metrics:
-- Total Medication Cost: $546K
-- Total Billing: $3.2M
-- Total Insurance Coverage: $2.23M
-- Total Rooms Charge: $73.2K
-- Total Treatment Cost: $2.6M
+- **Total Medication Cost:** $546K
+- **Total Billing:** $3.4M
+- **Total Insurance Coverage:** $2.23M
+- **Total Rooms Charge:** $73.2K
+- **Total Treatment Cost:** $2.6M
 
 ### 2. Total Billing by Room Type
 #### Room Types:
-- General Ward: $1.95M
-- Private Room: $1.25M
-- Semi-Private Room: $0.55M
-
+- **General Ward:** $0.6M
+- **Private Room:** $0.6M
+- **Semi-Private Room:** $0.6M
+- **N/A:** $1.6M
 ### 3. Total Billing by State and City
 #### States/Cities:
-- Birmingham: $0.77M
-- Bristol: $0.35M
-- Edinburgh: $0.15M
-- Glasgow: $0.18M
-- Leeds: $0.17M
-- Liverpool: $0.16M
-- London: $1.6M
-- Manchester: $0.15M
-- Newcastle: $0.14M
-- Sheffield: $0.39M
+- **Birmingham:** $0.82M
+- **Bristol:** $0.64M
+- **Edinburgh:** $1.02M
+- **Glasgow:** $0.18M
+- **Leeds:** $0.17M
+- **Liverpool:** $0.16M
+- **London:** $1.6M
+- **Manchester:** $0.15M
+- **Newcastle:** $0.14M
+- **Sheffield:** $0.39M
 
 ### 4. Average Costs
 #### Metrics:
-- Average Billing Amount: $649.92
-- Average Insurance Coverage: $456.04
-- Average Medication Cost: $109.21
-- Average Rooms Charge: $14.63
-- Average Treatment Cost: $526.08
+- **Average Billing Amount:** $671.22
+- **Average Insurance Coverage:** $445.18
+- **Average Medication Cost:** $109.21
+- **Average Rooms Charge:** $14.63
+- **Average Treatment Cost:** $526.08
 
 ### 5. Percentage of Total Billing by Procedure and Department
 #### Procedures:
-- Cardiology: 25.91%
-- General Medicine: 23.64%
-- Narcology: 23.59%
-- Orthopedics: 14.09%
-- Pediatrics: 12.77%
+- **Cardiology:** 25.24%
+- **General Medicine:** 23.34%
+- **Neurology:** 24.23%
+- **Orthopedics:** 12.95%
+- **Pediatrics:** 12.95%
 
 #### Departments:
-- Cardiology: 23.64%
-- General Medicine: 23.59%
-- Narcology: 14.09%
-- Orthopedics: 12.77%
-- Pediatrics: 23.39%
+- **Cardiology:** 25.24%
+- **General Medicine:** 23.34%
+- **Neurology:** 24.23%
+- **Orthopedics:** 12.95%
+- **Pediatrics:** 12.95%
 
 ### 6. Total Billing by Month
 - A line chart showing monthly billing trends.
