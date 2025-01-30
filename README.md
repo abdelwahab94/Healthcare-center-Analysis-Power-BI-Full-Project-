@@ -42,7 +42,7 @@ Before creating the data model and visualizations, the data underwent the follow
   Total Billing = Visits[Treatment Cost]+Visits[Medication Cost]+(Visits[Room Charges(daily rate)]*Visits[Length of Stay]
   ```
 
-  - A new column, `Length of Stay`, was created in the `Visits` table to calculate the Length of Patient Stay:
+- A new column, `Length of Stay`, was created in the `Visits` table to calculate the Length of Patient Stay:
   ```DAX
   Length of Stay = Visits[Discharge Date]+Visits[Admitted Date]
   ```
